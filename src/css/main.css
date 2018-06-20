@@ -5,8 +5,6 @@
 .guide{
    float: right;
     list-style: none;
-    background: repeating-linear-gradient(30deg,
-    #79b, #79b 15px, #58a 0, #58a 30px);
 }
 
 .guide  li{

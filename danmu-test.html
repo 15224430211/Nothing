@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+        .danmu-content {
+            position: absolute;
+        }
+
+        #danmu-wall {
+            background-color: #eee;
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .text-input-row {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .buttons-row {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .buttons-row button {
+            width: 160px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="container-fluid"> <!-- this is to make it responsive to your screen width-->
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1" id="danmu-wall">
+        </div>
+    </div>
+
+    <div class="text-input-row">
+        <input class="form-control" placeholder="说点什么" id='user-input'>
+    </div>
+
+    <div class="buttons-row text-center">
+        <button type="button" class="btn btn-lg btn-primary" id="send-button">发射</button>
+        <button type="button" class="btn btn-lg btn-default" id="clear-button">清除</button>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="https://cdn.wilddog.com/js/client/current/wilddog.js"></script>
+<script type="text/javascript" src="src/js/jquery-3.3.1.js"></script>
+<script>
+    function getRandomInt (min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '#';
+        for (var i = 0; i < 6; i++ ) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function displayDanmu(dmObj) {
+        var divWidth = $('#danmu-wall').width();
+        var divHeight = $('#danmu-wall').height();
+        var randomHeight = getRandomInt(0, divHeight);
+        var _left = divWidth;
+        var _top = randomHeight-20;
+        var time = 10000;
+        dmObj.css({left:_left,top:_top,color:getRandomColor()});
+
+        dmObj.animate({left:"-"+_left+"px"},time,function(){});
+    }
+
+    function createDanmu(content) {
+        var p = document.createElement('p');
+        $(p).addClass("danmu-content")
+            .html(content)
+            .appendTo($("#danmu-wall"));
+        return $(p);
+    }
+
+    function handleSend() {
+        var content = $('#user-input').val();
+        displayDanmu(createDanmu(content));
+        storeDanmu(content);
+        $('#user-input').val('');
+    }
+
+    function storeDanmu(content) {
+        var ref = new Wilddog("https://danmuapp.wilddogio.com/danmu");
+        var newref = ref.push({
+            content: content,
+            timestamp: Math.round(new Date().getTime()/1000)
+        });
+        // self send will not display twice
+        var newPath = newref.toString().split('/');
+        var newKey = newPath[newPath.length -1];
+        window.showedKeys[newKey] = '1';
+    }
+
+    window.danmuContent = {};
+    window.showedKeys = {};
+
+    function loadDanmu() {
+        var ref = new Wilddog("https://danmuapp.wilddogio.com/danmu");
+        // TODO: child_added is not triggered when push new, so i use value to listen to.
+        ref.on("value", function(snapshot) {
+            //console.log(snapshot.val());
+            window.danmuContent = snapshot.val();
+        }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+        });
+    }
+
+    function routine() {
+        setTimeout(routine,1000);
+        //alert('hi');
+        // choose from window.danmmuContent and send it to screen
+        for (var k in window.danmuContent) {
+            if (k in window.showedKeys) {
+                continue;
+            }
+            else {
+                window.showedKeys[k] = '1';
+                var content = window.danmuContent[k].content;
+                displayDanmu(createDanmu(content));
+                break;
+            }
+
+        }
+
+    }
+
+    $( document ).ready(function() {
+        $('#send-button').click(function(){
+            handleSend();
+        });
+        $(document).keypress(function(e) {
+            if(e.which == 13) {
+                handleSend();
+            }
+        });
+        $('#clear-button').click(function(){
+            $('#danmu-wall').empty();
+        });
+        loadDanmu();
+
+        routine();
+    });
+
+</script>
+</body>
+
+</html>

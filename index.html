@@ -21,8 +21,6 @@
             animation: Gradient 15s ease infinite;
         }
 
-
-
         @-webkit-keyframes Gradient {
             0% {
                 background-position: 0% 50%
@@ -69,6 +67,7 @@
             right: 0;
             left: 0;
         }
+
         #menu {
             width: 150px;
             height: 150px;
@@ -167,6 +166,10 @@
             left: 50%;
             font-size: 20px;
         }
+
+        .carousel {
+            display: none;;
+        }
     </style>
 </head>
 <body>
@@ -180,14 +183,13 @@
                   fill="#E02D2D" p-id="2597"></path>
         </svg>
     </div>
-    <!--<div>-->
-    <!--<svg class="icon boom_2"-->
-    <!--style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"-->
-    <!--viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2596">-->
-    <!--<path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z"-->
-    <!--fill="#66cc99" p-id="2597"></path>-->
-    <!--</svg>-->
-    <!--</div>-->
+
+    <div class='carousel'>
+        <img class='img' src='src/img/1.jpg'/>
+        <img class='img' src='src/img/2.jpg'/>
+        <img class='img' src='src/img/3.jpg'/>
+    </div>
+
 
     <ul class="guide">
         <li><a href="#">What</a></li>
@@ -236,27 +238,71 @@
         </div>
     </div>
 </div>
-
-<!--<canvas id="canvas" width="750" height="600"></canvas></div>-->
-
-<!--<script type="text/javascript" src="src/js/main.js"></script>-->
-<!--<canvas id="canvas" class="sbxg"></canvas>-->
-<!--<script type="text/javascript" src="src/js/hovertree.js"></script>-->
+<canvas id="Canvas" width="800" height="450"></canvas>
 <script type="text/javascript">
-    function getRandomColor(){
-        var rgb='rgb('+Math.floor(Math.random()*255)+',' +Math.floor(Math.random()*255)+',' +Math.floor(Math.random()*255)+')';
+    function getRandomColor() {
+        var rgb = 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
 
         return rgb;
     }
+
     //    获取按钮
-    var btn_one=document.querySelector(".menu-button");
-    var Divs=document.querySelectorAll(".menu-button");
-    btn_one.onclick=function(){
-        for(var i=0;i<Divs.length;i++){
-            Divs[i].style.backgroundColor=getRandomColor();
+    var btn_one = document.querySelector(".menu-button");
+    var Divs = document.querySelectorAll(".menu-button");
+    btn_one.onclick = function () {
+        for (var i = 0; i < Divs.length; i++) {
+            Divs[i].style.backgroundColor = getRandomColor();
         }
     };
 
+    var ctx = document.querySelector('#Canvas').getContext('2d'),
+        img = document.querySelector('.img');
+
+    ctx.beginPath();
+    ctx.drawImage(img, 0, 0);
+    ctx.closePath();
+    ctx.stroke();
+
+    var imgW = 1920, //图片原始宽/高
+        imgH = 1080;
+
+    var conW = 800, //画布宽/高
+        conH = 450;
+
+    var dw = 25, //画布单元格宽/高
+        dh = 25;
+
+    var I = conH / dh, //单元行/列数
+        J = conW / dw;
+
+    var DW = imgW / J, //原图单元格宽/高
+        DH = imgH / I;
+
+    function handleDraw(img, i, j) {
+        ctx.drawImage(img, DW*j, DH*i, DW, DH, dw*j, dh*i, dw, dh);
+    }
+    ctx.beginPath();
+
+    for (var i = 0; i < I; i ++) {
+        for (var j = 0; j < J; j ++) {
+            handleDraw(img, i, j);
+        }
+    }
+
+    ctx.closePath();
+    ctx.stroke();
+
+  function  countAround(i, j, dst) {
+        var resArr = [];
+        for (var m = (i-dst); m <= (i+dst); m++) {
+            for (var n = (j-dst); n <= (j+dst); n++) {
+                if ((Math.abs(m-i) + Math.abs(n-j) == dst) && (m >=0 && n >= 0) && (m <= (I-1) && n <= (J-1))) {
+                    resArr.push({x: m, y: n});
+                }
+            }
+        }
+        return resArr;
+    }
 </script>
 </body>
 </html>

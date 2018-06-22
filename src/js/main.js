@@ -1,29 +1,13 @@
-var canvas = document.getElementById('canvas');
-var context = canvas.getContext("2d");
-
-var g1 = context.createLinearGradient(0, 0, 100, 300);
-g1.addColorStop(0, '#E55D87');
-g1.addColorStop(1, '#5FC3E4');
-context.fillStyle = g1;
-context.fillRect(0, 0, 400, 300);
-
-
-var n = 0;
-var dx = 150;
-var dy = 150;
-var s = 100;
-context.beginPath();
-context.fillStyle = 'pink';
-context.strokeStyle = 'rgb(0,0,100)';
-var x = Math.sin(0);
-var y = Math.cos(0);
-var dig = Math.PI / 15 * 7;
-for (var i = 0; i < 30; i++) {
-    var x = Math.sin(i * dig);
-    var y = Math.cos(i * dig);
-    context.lineTo(dx + x * s, dy + y * s);
-    console.log( x ,y )
+function getRandomColor() {
+    var rgb = 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+    return rgb;
 }
-context.closePath();
-context.fill();
-context.stroke();
+
+var btn_one = document.querySelector(".menu-button");
+var Divs = document.querySelectorAll(".menu-button");
+btn_one.onclick = function () {
+    for (var i = 0; i < Divs.length; i++) {
+        Divs[i].style.backgroundColor = getRandomColor();
+    }
+};
+

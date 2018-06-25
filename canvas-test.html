@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style class="cp-pen-styles">
+        body
+        {
+            background-color: #000;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        a
+        {
+            font-family: monospace;
+            color: #fff;
+            text-decoration: none;
+            background: #222;
+            padding: 4px 6px;
+            z-index: 100;
+        }
+
+        canvas
+        {
+            position: absolute;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+        }
+
+        #container
+        {
+            position: absolute;
+            width: 768px;
+            height: 485px;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .hidden
+        {
+            position: absolute;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<img src="src/img/city_copy.jpg" id="src_img" class="hidden">
+<div id="container" style="-webkit-perspective: 500px;"><canvas width="90" height="83" style="width: 90.0463px; height: 83.4565px; transform: matrix(1, 0, 0, 1, 677.954, -515.574); opacity: 1;"></canvas><canvas width="131" height="93" style="width: 131.459px; height: 93.8352px; transform: matrix(1, 0, 0, 1, 636.541, -813.126); opacity: 1;"></canvas><canvas width="128" height="50" style="width: 128.759px; height: 50.2611px; transform: matrix(1, 0, 0, 1, 639.241, -861.005); opacity: 1;"></canvas><canvas width="131" height="77" style="width: 131.459px; height: 77.4468px; transform: matrix(1, 0, 0, 1, 636.541, -854.966); opacity: 1;"></canvas><canvas width="82" height="93" style="width: 82.2686px; height: 93.8352px; transform: matrix(1, 0, 0, 1, 685.731, -789.087); opacity: 1;"></canvas><canvas width="82" height="29" style="width: 82.2686px; height: 29.3381px; transform: matrix(1, 0, 0, 1, 685.731, -718.249); opacity: 1;"></canvas><canvas width="49" height="35" style="width: 49.1844px; height: 35.8561px; transform: matrix(1, 0, 0, 1, 718.816, -719.698); opacity: 1;"></canvas><canvas width="49" height="71" style="width: 49.1844px; height: 71.5964px; transform: matrix(1, 0, 0, 1, 718.816, -694.845); opacity: 1;"></canvas><canvas width="110" height="97" style="width: 110.11px; height: 97.0858px; transform: matrix(1, 0, 0, 1, 657.89, -679.747); opacity: 1;"></canvas><canvas width="110" height="69" style="width: 110.11px; height: 69.8486px; transform: matrix(1, 0, 0, 1, 657.89, -611.727); opacity: 1;"></canvas><canvas width="90" height="63" style="width: 90.0463px; height: 63.789px; transform: matrix(1, 0, 0, 1, 677.954, -523.608); opacity: 1;"></canvas><canvas width="90" height="38" style="width: 90.0463px; height: 38.5632px; transform: matrix(1, 0, 0, 1, 677.954, -531.464); opacity: 1;"></canvas><canvas width="86" height="74" style="width: 86.0895px; height: 74.0332px; transform: matrix(1, 0, 0, 1, 681.91, -625.165); opacity: 1;"></canvas><canvas width="81" height="74" style="width: 81.4703px; height: 74.2747px; transform: matrix(1, 0, 0, 1, 686.53, -461.695); opacity: 1;"></canvas><canvas width="87" height="53" style="width: 87.5812px; height: 53.822px; transform: matrix(1, 0, 0, 1, 680.419, -431.96); opacity: 1;"></canvas><canvas width="87" height="33" style="width: 87.5812px; height: 33.5935px; transform: matrix(1, 0, 0, 1, 680.419, -412.528); opacity: 1;"></canvas><canvas width="106" height="74" style="width: 106.349px; height: 74.3655px; transform: matrix(1, 0, 0, 1, 612.467, -713.811); opacity: 1;"></canvas><canvas width="106" height="97" style="width: 106.349px; height: 97.0858px; transform: matrix(1, 0, 0, 1, 612.467, -681.751); opacity: 1;"></canvas><canvas width="91" height="101" style="width: 91.671px; height: 101.421px; transform: matrix(1, 0, 0, 1, 586.283, -498.395); opacity: 1;"></canvas><canvas width="62" height="53" style="width: 62.6078px; height: 53.822px; transform: matrix(1, 0, 0, 1, 623.922, -422.125); opacity: 1;"></canvas><canvas width="62" height="101" style="width: 62.6078px; height: 101.421px; transform: matrix(1, 0, 0, 1, 623.922, -491.814); opacity: 1;"></canvas><canvas width="102" height="74" style="width: 102.915px; height: 74.3655px; transform: matrix(1, 0, 0, 1, 582.817, -701.388); opacity: 1;"></canvas><canvas width="136" height="76" style="width: 136.698px; height: 76.7815px; transform: matrix(1, 0, 0, 1, 549.033, -710.056); opacity: 1;"></canvas><canvas width="136" height="66" style="width: 136.698px; height: 66.6495px; transform: matrix(1, 0, 0, 1, 549.033, -767.438); opacity: 1;"></canvas><canvas width="59" height="35" style="width: 59.3243px; height: 35.8573px; transform: matrix(1, 0, 0, 1, 621.095, -413.943); opacity: 1;"></canvas><canvas width="95" height="55" style="width: 95.6277px; height: 55.5049px; transform: matrix(1, 0, 0, 1, 586.283, -533.025); opacity: 1;"></canvas><canvas width="95" height="99" style="width: 95.6277px; height: 99.8641px; transform: matrix(1, 0, 0, 1, 586.283, -597.397); opacity: 1;"></canvas><canvas width="47" height="77" style="width: 47.0874px; height: 77.4468px; transform: matrix(1, 0, 0, 1, 592.154, -859.778); opacity: 1;"></canvas><canvas width="103" height="114" style="width: 103.044px; height: 114.137px; transform: matrix(1, 0, 0, 1, 554.847, -642.522); opacity: 1;"></canvas><canvas width="103" height="99" style="width: 103.044px; height: 99.8641px; transform: matrix(1, 0, 0, 1, 554.847, -576.817); opacity: 1;"></canvas><canvas width="57" height="123" style="width: 57.6201px; height: 123.452px; transform: matrix(1, 0, 0, 1, 554.847, -651.811); opacity: 1;"></canvas><canvas width="87" height="76" style="width: 87.5075px; height: 76.7958px; transform: matrix(1, 0, 0, 1, 549.033, -794.846); opacity: 1;"></canvas><canvas width="101" height="55" style="width: 101.27px; height: 55.5693px; transform: matrix(1, 0, 0, 1, 537.971, -841.37); opacity: 1;"></canvas><canvas width="108" height="75" style="width: 108.264px; height: 75.5102px; transform: matrix(1, 0, 0, 1, 515.657, -444.986); opacity: 1;"></canvas><canvas width="108" height="84" style="width: 108.264px; height: 84.4796px; transform: matrix(1, 0, 0, 1, 515.657, -485.118); opacity: 1;"></canvas><canvas width="61" height="123" style="width: 61.6768px; height: 123.452px; transform: matrix(1, 0, 0, 1, 521.14, -647.051); opacity: 1;"></canvas><canvas width="150" height="75" style="width: 150.63px; height: 75.5102px; transform: matrix(1, 0, 0, 1, 470.464, -448.947); opacity: 1;"></canvas><canvas width="64" height="76" style="width: 64.0067px; height: 76.7815px; transform: matrix(1, 0, 0, 1, 518.81, -710.827); opacity: 1;"></canvas><canvas width="124" height="80" style="width: 124.586px; height: 80.4297px; transform: matrix(1, 0, 0, 1, 467.568, -801.085); opacity: 1;"></canvas><canvas width="124" height="55" style="width: 124.586px; height: 55.5693px; transform: matrix(1, 0, 0, 1, 467.568, -838.38); opacity: 1;"></canvas><canvas width="64" height="49" style="width: 64.0067px; height: 49.1551px; transform: matrix(1, 0, 0, 1, 518.81, -689.137); opacity: 1;"></canvas><canvas width="83" height="32" style="width: 83.787px; height: 32.4225px; transform: matrix(1, 0, 0, 1, 502.496, -528.35); opacity: 1;"></canvas><canvas width="83" height="44" style="width: 83.787px; height: 44.8267px; transform: matrix(1, 0, 0, 1, 502.496, -476.493); opacity: 1;"></canvas><canvas width="70" height="51" style="width: 70.4032px; height: 51.9354px; transform: matrix(1, 0, 0, 1, 467.568, -862.005); opacity: 1;"></canvas><canvas width="81" height="82" style="width: 81.4654px; height: 82.0564px; transform: matrix(1, 0, 0, 1, 467.568, -786.356); opacity: 1;"></canvas><canvas width="112" height="114" style="width: 112.91px; height: 114.983px; transform: matrix(1, 0, 0, 1, 441.937, -632.472); opacity: 1;"></canvas><canvas width="112" height="55" style="width: 112.91px; height: 55.7488px; transform: matrix(1, 0, 0, 1, 441.937, -535.631); opacity: 1;"></canvas><canvas width="78" height="36" style="width: 78.5641px; height: 36.0958px; transform: matrix(1, 0, 0, 1, 470.469, -703.877); opacity: 1;"></canvas><canvas width="50" height="83" style="width: 50.6707px; height: 83.6242px; transform: matrix(1, 0, 0, 1, 470.469, -706.283); opacity: 1;"></canvas><canvas width="152" height="83" style="width: 152.206px; height: 83.6242px; transform: matrix(1, 0, 0, 1, 368.934, -706.426); opacity: 1;"></canvas><canvas width="152" height="120" style="width: 152.206px; height: 120.09px; transform: matrix(1, 0, 0, 1, 368.934, -667.468); opacity: 1;"></canvas><canvas width="86" height="119" style="width: 86.4138px; height: 119.979px; transform: matrix(1, 0, 0, 1, 429.244, -494.896); opacity: 1;"></canvas><canvas width="86" height="75" style="width: 86.4138px; height: 75.5102px; transform: matrix(1, 0, 0, 1, 429.244, -448.184); opacity: 1;"></canvas><canvas width="107" height="55" style="width: 107.157px; height: 55.7488px; transform: matrix(1, 0, 0, 1, 395.339, -542.453); opacity: 1;"></canvas><canvas width="107" height="144" style="width: 107.157px; height: 144.006px; transform: matrix(1, 0, 0, 1, 395.339, -521.667); opacity: 1;"></canvas><canvas width="87" height="51" style="width: 87.9323px; height: 51.9354px; transform: matrix(1, 0, 0, 1, 413.363, -854.248); opacity: 1;"></canvas><canvas width="84" height="144" style="width: 84.9657px; height: 144.006px; transform: matrix(1, 0, 0, 1, 344.278, -511.894); opacity: 1;"></canvas><canvas width="101" height="120" style="width: 101.426px; height: 120.09px; transform: matrix(1, 0, 0, 1, 340.511, -671.263); opacity: 1;"></canvas><canvas width="100" height="82" style="width: 100.251px; height: 82.0564px; transform: matrix(1, 0, 0, 1, 370.218, -788.164); opacity: 1;"></canvas><canvas width="101" height="90" style="width: 101.536px; height: 90.6268px; transform: matrix(1, 0, 0, 1, 368.934, -745.038); opacity: 1;"></canvas><canvas width="97" height="98" style="width: 97.3496px; height: 98.5557px; transform: matrix(1, 0, 0, 1, 370.218, -860.899); opacity: 1;"></canvas><canvas width="70" height="98" style="width: 70.3148px; height: 98.5557px; transform: matrix(1, 0, 0, 1, 343.048, -853.683); opacity: 1;"></canvas><canvas width="101" height="72" style="width: 101.426px; height: 72.4187px; transform: matrix(1, 0, 0, 1, 340.511, -580.989); opacity: 1;"></canvas><canvas width="53" height="31" style="width: 53.0004px; height: 31.722px; transform: matrix(1, 0, 0, 1, 388.936, -554.298); opacity: 1;"></canvas><canvas width="146" height="69" style="width: 146.183px; height: 69.7651px; transform: matrix(1, 0, 0, 1, 283.061, -446.119); opacity: 1;"></canvas><canvas width="104" height="69" style="width: 104.038px; height: 69.6355px; transform: matrix(1, 0, 0, 1, 309.325, -853.661); opacity: 1;"></canvas><canvas width="61" height="69" style="width: 61.217px; height: 69.7651px; transform: matrix(1, 0, 0, 1, 283.061, -436.786); opacity: 1;"></canvas><canvas width="44" height="67" style="width: 44.9768px; height: 67.9719px; transform: matrix(1, 0, 0, 1, 323.957, -673.885); opacity: 1;"></canvas><canvas width="56" height="90" style="width: 56.9738px; height: 90.6268px; transform: matrix(1, 0, 0, 1, 313.245, -758.581); opacity: 1;"></canvas><canvas width="94" height="85" style="width: 94.7764px; height: 85.6617px; transform: matrix(1, 0, 0, 1, 294.16, -509.421); opacity: 1;"></canvas><canvas width="51" height="85" style="width: 51.061px; height: 85.6617px; transform: matrix(1, 0, 0, 1, 344.278, -521.991); opacity: 1;"></canvas><canvas width="114" height="72" style="width: 114.003px; height: 72.4187px; transform: matrix(1, 0, 0, 1, 274.933, -593.38); opacity: 1;"></canvas><canvas width="114" height="93" style="width: 114.003px; height: 93.2825px; transform: matrix(1, 0, 0, 1, 274.933, -559.008); opacity: 1;"></canvas><canvas width="50" height="30" style="width: 50.1182px; height: 30.6683px; transform: matrix(1, 0, 0, 1, 294.16, -456.602); opacity: 1;"></canvas><canvas width="55" height="102" style="width: 55.6891px; height: 102.874px; transform: matrix(1, 0, 0, 1, 313.245, -746.702); opacity: 1;"></canvas><canvas width="56" height="43" style="width: 56.9738px; height: 43.7185px; transform: matrix(1, 0, 0, 1, 313.245, -771.034); opacity: 1;"></canvas><canvas width="49" height="102" style="width: 49.1736px; height: 102.874px; transform: matrix(1, 0, 0, 1, 274.783, -726.902); opacity: 1;"></canvas><canvas width="81" height="69" style="width: 81.243px; height: 69.6355px; transform: matrix(1, 0, 0, 1, 261.805, -842.245); opacity: 1;"></canvas><canvas width="81" height="53" style="width: 81.243px; height: 53.7997px; transform: matrix(1, 0, 0, 1, 261.805, -783.066); opacity: 1;"></canvas><canvas width="65" height="45" style="width: 65.7277px; height: 45.411px; transform: matrix(1, 0, 0, 1, 274.783, -648.316); opacity: 1;"></canvas><canvas width="65" height="80" style="width: 65.7277px; height: 80.4919px; transform: matrix(1, 0, 0, 1, 274.783, -631.123); opacity: 1;"></canvas><canvas width="48" height="99" style="width: 48.1952px; height: 99.4821px; transform: matrix(1, 0, 0, 1, 283.061, -477.525); opacity: 1;"></canvas><canvas width="72" height="99" style="width: 72.7702px; height: 99.4821px; transform: matrix(1, 0, 0, 1, 221.39, -460.643); opacity: 1;"></canvas><canvas width="109" height="98" style="width: 109.177px; height: 98.3896px; transform: matrix(1, 0, 0, 1, 204.067, -740.258); opacity: 1;"></canvas><canvas width="141" height="37" style="width: 141.547px; height: 37.0892px; transform: matrix(1, 0, 0, 1, 167.779, -842.34); opacity: 1;"></canvas><canvas width="109" height="79" style="width: 109.177px; height: 79.8796px; transform: matrix(1, 0, 0, 1, 204.067, -780.89); opacity: 1;"></canvas><canvas width="113" height="59" style="width: 113.896px; height: 59.5543px; transform: matrix(1, 0, 0, 1, 195.429, -857.702); opacity: 1;"></canvas><canvas width="39" height="80" style="width: 39.1698px; height: 80.4919px; transform: matrix(1, 0, 0, 1, 235.763, -646.756); opacity: 1;"></canvas><canvas width="58" height="108" style="width: 58.3964px; height: 108.51px; transform: matrix(1, 0, 0, 1, 235.763, -568.781); opacity: 1;"></canvas><canvas width="145" height="111" style="width: 145.497px; height: 111.179px; transform: matrix(1, 0, 0, 1, 148.663, -560.358); opacity: 1;"></canvas><canvas width="145" height="60" style="width: 145.497px; height: 60.4945px; transform: matrix(1, 0, 0, 1, 148.663, -459.72); opacity: 1;"></canvas><canvas width="85" height="72" style="width: 85.1433px; height: 72.3096px; transform: matrix(1, 0, 0, 1, 189.64, -696.893); opacity: 1;"></canvas><canvas width="61" height="38" style="width: 61.6714px; height: 38.9876px; transform: matrix(1, 0, 0, 1, 221.39, -396.327); opacity: 1;"></canvas><canvas width="85" height="65" style="width: 85.1433px; height: 65.3356px; transform: matrix(1, 0, 0, 1, 189.64, -687.997); opacity: 1;"></canvas><canvas width="84" height="65" style="width: 84.8147px; height: 65.2643px; transform: matrix(1, 0, 0, 1, 189.969, -635.08); opacity: 1;"></canvas><canvas width="66" height="102" style="width: 66.3758px; height: 102.345px; transform: matrix(1, 0, 0, 1, 195.429, -812.345); opacity: 1;"></canvas><canvas width="39" height="80" style="width: 39.3237px; height: 80.4123px; transform: matrix(1, 0, 0, 1, 109.339, -546.912); opacity: 1;"></canvas><canvas width="126" height="87" style="width: 126.424px; height: 87.8334px; transform: matrix(1, 0, 0, 1, 109.339, -630.78); opacity: 1;"></canvas><canvas width="126" height="111" style="width: 126.424px; height: 111.179px; transform: matrix(1, 0, 0, 1, 109.339, -570.179); opacity: 1;"></canvas><canvas width="93" height="38" style="width: 93.2208px; height: 38.9876px; transform: matrix(1, 0, 0, 1, 134.066, -413.439); opacity: 1;"></canvas><canvas width="87" height="96" style="width: 87.3231px; height: 96.8134px; transform: matrix(1, 0, 0, 1, 134.066, -459.503); opacity: 1;"></canvas><canvas width="64" height="65" style="width: 64.5259px; height: 65.3356px; transform: matrix(1, 0, 0, 1, 125.443, -704.109); opacity: 1;"></canvas><canvas width="80" height="92" style="width: 80.6294px; height: 92.869px; transform: matrix(1, 0, 0, 1, 109.339, -629.273); opacity: 1;"></canvas><canvas width="131" height="109" style="width: 131.273px; height: 109.688px; transform: matrix(1, 0, 0, 1, 64.156, -805.945); opacity: 1;"></canvas><canvas width="115" height="109" style="width: 115.014px; height: 109.688px; transform: matrix(1, 0, 0, 1, 89.0535, -823.733); opacity: 1;"></canvas><canvas width="115" height="15" style="width: 115.014px; height: 15.1714px; transform: matrix(1, 0, 0, 1, 89.0535, -714.525); opacity: 1;"></canvas><canvas width="131" height="66" style="width: 131.273px; height: 66.8288px; transform: matrix(1, 0, 0, 1, 64.156, -839.623); opacity: 1;"></canvas><canvas width="97" height="60" style="width: 97.8525px; height: 60.3px; transform: matrix(1, 0, 0, 1, 91.7875, -695.414); opacity: 1;"></canvas><canvas width="100" height="31" style="width: 100.587px; height: 31.2347px; transform: matrix(1, 0, 0, 1, 89.0535, -691.401); opacity: 1;"></canvas><canvas width="89" height="96" style="width: 89.0992px; height: 96.8134px; transform: matrix(1, 0, 0, 1, 59.5637, -460.67); opacity: 1;"></canvas><canvas width="103" height="66" style="width: 103.622px; height: 66.8288px; transform: matrix(1, 0, 0, 1, 64.156, -862.163); opacity: 1;"></canvas><canvas width="89" height="65" style="width: 89.0992px; height: 65.1243px; transform: matrix(1, 0, 0, 1, 59.5637, -488.322); opacity: 1;"></canvas><canvas width="125" height="92" style="width: 125.443px; height: 92.869px; transform: matrix(1, 0, 0, 1, 0, -630.354); opacity: 1;"></canvas><canvas width="134" height="65" style="width: 134.066px; height: 65.4182px; transform: matrix(1, 0, 0, 1, 0, -430.334); opacity: 1;"></canvas><canvas width="125" height="47" style="width: 125.443px; height: 47.7374px; transform: matrix(1, 0, 0, 1, 0, -664.416); opacity: 1;"></canvas><canvas width="109" height="82" style="width: 109.339px; height: 82.0247px; transform: matrix(1, 0, 0, 1, 0, -632.836); opacity: 1;"></canvas><canvas width="113" height="65" style="width: 113.545px; height: 65.1243px; transform: matrix(1, 0, 0, 1, 0, -499.145); opacity: 1;"></canvas><canvas width="113" height="48" style="width: 113.545px; height: 48.8961px; transform: matrix(1, 0, 0, 1, 0, -545.805); opacity: 1;"></canvas><canvas width="113" height="70" style="width: 113.545px; height: 70.2896px; transform: matrix(1, 0, 0, 1, 0, -545.407); opacity: 1;"></canvas><canvas width="89" height="79" style="width: 89.0535px; height: 79.9487px; transform: matrix(1, 0, 0, 1, 0, -778.981); opacity: 1;"></canvas><canvas width="91" height="31" style="width: 91.7875px; height: 31.2347px; transform: matrix(1, 0, 0, 1, 0, -704.5); opacity: 1;"></canvas><canvas width="91" height="49" style="width: 91.7875px; height: 49.7808px; transform: matrix(1, 0, 0, 1, 0, -663.135); opacity: 1;"></canvas><canvas width="82" height="66" style="width: 82.2077px; height: 66.8288px; transform: matrix(1, 0, 0, 1, 0, -841.48); opacity: 1;"></canvas><canvas width="89" height="32" style="width: 89.0535px; height: 32.0439px; transform: matrix(1, 0, 0, 1, 0, -692.505); opacity: 1;"></canvas><canvas width="64" height="77" style="width: 64.156px; height: 77.096px; transform: matrix(1, 0, 0, 1, 0, -781.37); opacity: 1;"></canvas><canvas width="59" height="47" style="width: 59.5637px; height: 47.5888px; transform: matrix(1, 0, 0, 1, 0, -461.373); opacity: 1;"></canvas><canvas width="59" height="65" style="width: 59.5637px; height: 65.4182px; transform: matrix(1, 0, 0, 1, 0, -432.076); opacity: 1;"></canvas><canvas width="64" height="67" style="width: 64.156px; height: 67.1265px; transform: matrix(1, 0, 0, 1, 0, -844.714); opacity: 1;"></canvas></div>
+
+<script src="src/js/delaunay.js"></script>
+<script src="src/js/TweenMax.min.js"></script>
+<script>
+    var imageWidth = 768,
+        imageHeight = 485;
+
+    var vertices = [],
+        indices,
+        boxes = [];
+
+    var image,
+        fragments = [],
+        container = document.getElementById('container');
+
+    window.onload = function () {
+        image = document.getElementById('src_img');
+
+        triangulate();
+        makeBoxes();
+        makeFragments();
+    };
+
+    function triangulate() {
+        var x,
+            y,
+            dx = imageWidth / 8,
+            dy = imageHeight / 8,
+            offset = 0.5;
+
+        for (var i = 0; i <= imageWidth; i += dx) {
+            for (var j = 0; j <= imageHeight; j += dy) {
+                if (i && (i !== imageWidth)) x = i + randomRange(-dx * offset, dx * offset);
+                else x = i;
+
+                if (j && (j !== imageHeight)) y = j + randomRange(-dy * offset, dy * offset);
+                else y = j;
+
+                vertices.push([x, y]);
+            }
+        }
+
+        indices = Delaunay.triangulate(vertices);
+    }
+
+    function makeBoxes() {
+        var p0, p1, p2,
+            xMin, xMax,
+            yMin, yMax;
+
+        for (var i = 0; i < indices.length; i += 3) {
+            p0 = vertices[indices[i + 0]];
+            p1 = vertices[indices[i + 1]];
+            p2 = vertices[indices[i + 2]];
+
+            xMin = Math.min(p0[0], p1[0], p2[0]);
+            xMax = Math.max(p0[0], p1[0], p2[0]);
+            yMin = Math.min(p0[1], p1[1], p2[1]);
+            yMax = Math.max(p0[1], p1[1], p2[1]);
+
+            boxes.push({
+                x: xMin,
+                y: yMin,
+                w: xMax - xMin,
+                h: yMax - yMin
+            });
+        }
+    }
+
+    function makeFragments() {
+        var p0, p1, p2,
+            box,
+            fragment;
+
+        TweenMax.set(container, { perspective: 500 });
+
+        var tl0 = new TimelineMax({ repeat: -1 });
+
+        for (var i = 0; i < indices.length; i += 3) {
+            p0 = vertices[indices[i + 0]];
+            p1 = vertices[indices[i + 1]];
+            p2 = vertices[indices[i + 2]];
+            box = boxes[i / 3];
+
+            fragment = new Fragment(p0, p1, p2, box);
+
+            var rx = randomRange(30, 60) * ((i % 2) ? 1 : -1);
+            var ry = randomRange(30, 60) * ((i % 2) ? -1 : 1);
+            var tl1 = new TimelineMax();
+
+            TweenMax.set(fragment.canvas, {
+                y: box.y - 1000
+            });
+
+            tl1.to(fragment.canvas, randomRange(0.9, 1.1), {
+                y: box.y,
+                ease: Back.easeOut
+            });
+            tl1.to(fragment.canvas, 0.5, {
+                z: -100,
+                ease: Cubic.easeIn,
+                delay: 0.4
+            });
+            tl1.to(fragment.canvas, randomRange(1, 1.2), {
+                rotationX: rx,
+                rotationY: ry,
+                z: 250,
+                alpha: 0,
+                ease: Cubic.easeOut
+            });
+
+            tl0.insert(tl1);
+
+            fragments.push(fragment);
+            container.appendChild(fragment.canvas);
+        }
+    }
+
+    function randomRange(min, max) {
+        return min + (max - min) * Math.random();
+    }
+
+    Fragment = function (v0, v1, v2, box) {
+        this.v0 = v0;
+        this.v1 = v1;
+        this.v2 = v2;
+        this.box = box;
+
+        this.canvas = document.createElement('canvas');
+        this.canvas.width = this.box.w;
+        this.canvas.height = this.box.h;
+        this.canvas.style.width = this.box.w + 'px';
+        this.canvas.style.height = this.box.h + 'px';
+        this.ctx = this.canvas.getContext('2d');
+
+        TweenMax.set(this.canvas, {
+            x: this.box.x,
+            y: this.box.y
+        });
+
+        this.ctx.translate(-this.box.x, -this.box.y);
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.v0[0], this.v0[1]);
+        this.ctx.lineTo(this.v1[0], this.v1[1]);
+        this.ctx.lineTo(this.v2[0], this.v2[1]);
+        this.ctx.closePath();
+        this.ctx.clip();
+        this.ctx.drawImage(image, 0, 0);
+    }; //@ sourceURL=pen.js
+</script>
+
+
+</body>
+</html>

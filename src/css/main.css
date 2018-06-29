@@ -236,5 +236,9 @@ h6 {
     }
 }
 
+.mask img{
+    box-shadow: 5px 5px 15px 15px hsla(158,94%,58%,.8) ;
+}
+
 
 
